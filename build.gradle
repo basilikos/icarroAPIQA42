@@ -10,10 +10,20 @@ repositories {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    implementation 'io.rest-assured:rest-assured:5.4.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'org.testng:testng:7.4.0'
+
+    compileOnly 'org.projectlombok:lombok:1.18.28'
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
+    testCompileOnly 'org.projectlombok:lombok:1.18.28'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
+
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+
 }
 
 test {
-    useJUnitPlatform()
+    useTestNG()
 }
